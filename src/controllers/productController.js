@@ -40,6 +40,7 @@ module.exports = {
   async update(req, res){
     try {
         const {description} = req.body
+        const {done} = req.body
         const id = req.params.id
 
         const product= await Product.findOne({where: {id}})
@@ -50,6 +51,8 @@ module.exports = {
             return res.status(400).json('produto não encontrado')
         }
         product.description= description
+        product.done= done
+
         await product.save()
 
         res.status(201).json('produto editado com sucesso!')

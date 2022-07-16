@@ -1,7 +1,7 @@
 const Sequelize = require('sequelize')
 
 const sequelize = new Sequelize('crud', 'user', 'password', {
-  host: './dev.sqlite',
+  host: './database.sqlite',
   dialect:'sqlite'
 })
 
